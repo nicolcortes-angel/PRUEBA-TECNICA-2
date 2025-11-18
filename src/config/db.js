@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 
 // 2. crearse la funcion conexion 
 export const conexionMongo = async () =>{
-try { await mongoose.connect(process.env.BD_URL, {dbName:"casino"});
+try { await mongoose.connect(process.env.BD_URL, {dbName:"casino1"});
 console.log("conexion exitosa con la base de datos");
 
 
