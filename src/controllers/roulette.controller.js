@@ -14,11 +14,11 @@ export const openRoulette = async (request, response) => {
         return response.status(404).json({ message: "Ruleta no encontrada" });
       }
   
-      if (roulette.state === "open") {
+      if (roulette.state === "Abierto") {
         return response.status(400).json({ message: "La ruleta ya está abierta" });
       }
   
-      roulette.state = "open";
+      roulette.state = "Abierto";
       await roulette.save();
   
       return response.json({ message: "Ruleta abierta correctamente" });
@@ -46,7 +46,7 @@ export const PutRoulette = async (request, response) => {
         });
       }
   
-      if (roulette.state !== "open") {
+      if (roulette.state !== "Abierto") {
         return response.status(400).json({
           mensaje: "La ruleta no está abierta"
         });
@@ -95,7 +95,7 @@ export const closeRoulette = async (request, response) => {
         });
       }
   
-      if (roulette.state !== "open") {
+      if (roulette.state !== "Abierto") {
         return response.status(400).json({
           mensaje: "La ruleta no está abierta"
         });
