@@ -1,5 +1,5 @@
 //1. importar dependencias y modulos necesarias
-import { Roulette } from "../models/roulette.model";
+import { Roulette } from "../models/roulette.model.js";
 
 // definir las acciones que van a realizar - CRUD 
 
@@ -14,11 +14,11 @@ export const openRoulette = async (request, response) => {
         return response.status(404).json({ message: "Ruleta no encontrada" });
       }
   
-      if (roulette.state === "abierta") {
+      if (roulette.state === "open") {
         return response.status(400).json({ message: "La ruleta ya está abierta" });
       }
   
-      roulette.state = "abierta";
+      roulette.state = "open";
       await roulette.save();
   
       return response.json({ message: "Ruleta abierta correctamente" });

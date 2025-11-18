@@ -6,7 +6,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { conexionMongo } from "./src/config/db.js";
-import router from "./src/routes/roulette.routes.js";
+import Roulette from "./src/routes/roulette.routes.js";
 import cors from "cors";
 
 
@@ -26,7 +26,7 @@ app.get("/",(request,response)=>{
 
 app.use(cors()); //habilitacion cors 
 app.use(express.json());
-app.use("/roulette", router);
+app.use("/roulette", Roulette);
 
 // 4. levantar el servidor  
 app.listen(port, ()=>{

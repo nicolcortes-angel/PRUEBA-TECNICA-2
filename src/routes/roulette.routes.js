@@ -2,16 +2,16 @@
 import express from "express";
 import { openRoulette, PutRoulette, closeRoulette } from "../controllers/roulette.controller.js";
 
-const router = express.Router();
+const Roulette = express.Router();
 
 
 // 1. Abrir ruleta
-router.put("/abrir/:id", openRoulette);
+Roulette.put("/abrir/:id", openRoulette);
 
 // 2. Apostar en la ruleta
-router.put("/apostar/:id", PutRoulette);
+Roulette.put("/apostar/:id", PutRoulette);
 
 // 3. Cerrar ruleta
-router.put("/cerrar/:id", closeRoulette);
+Roulette.put("/cerrar/:id", closeRoulette);
 
-export default router;
+export default Roulette;
